@@ -7,6 +7,7 @@ import { ListComponent } from './list/list.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatExpansionModule} from '@angular/material/expansion'
@@ -16,7 +17,10 @@ import { MatExpansionModule} from '@angular/material/expansion'
     AppComponent,
     ListComponent,
     ClientListComponent,
+    HomeComponent,
+    FormComponent,
     HomeComponent
+
   ],
   imports: [
     BrowserModule,
