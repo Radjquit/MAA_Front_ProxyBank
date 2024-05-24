@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ListComponent } from './list/list.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'list' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent },
   { path: 'clients-list', component: ClientListComponent },
-  { path: 'list', component: ListComponent }
+  { path: 'list', component: ListComponent },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
