@@ -1,0 +1,92 @@
+#authentification-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#smiley {
+  margin: 2rem 0 1rem 0;
+}
+
+#title-authent {
+  margin-bottom: 0;
+}
+
+
+#login-text-authent {
+  color: #D6D6D6;
+  margin: 0 0 2rem 0;
+  font-size: smaller;
+}
+
+
+#form-authent {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+#link-forgot {
+  text-align: right;
+  font-size: xx-small;
+  cursor: pointer;
+}
+
+#submit-btn {
+  width: 70%;
+  padding: 0.25rem 0.8rem;
+  margin: 2rem auto;
+  background: #24FF00;
+  border-radius: 4px;
+  border: none;
+
+}
+
+#dino {
+ position: absolute;
+ bottom: 0;
+ right: 0;
+
+}
+
+.white-text {
+ color: white;
+}
+
+.green-text {
+ color: #24FF00;
+}
+
+.underline-txt {
+ text-decoration: underline;
+}
+
+.label {
+ font-weight: bold;
+ margin: 1rem 0 0.2rem 0;
+}
+
+.input {
+ padding:  0.5rem 0.2rem
+}
+
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+
+ #form-authent {
+  width: 32%;
+ }
+
+ #submit-btn {
+   margin: 4rem auto;
+   width: 50%;
+   padding: 0.5rem 0.9rem;
+   cursor: pointer;
+
+ }
+}

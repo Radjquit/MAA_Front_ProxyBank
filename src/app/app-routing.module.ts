@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ListComponent } from './list/list.component';
 import { HomeComponent } from './home/home.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'signin', component: AuthentificationComponent },
   { path: 'home', component: HomeComponent },
   { path: 'clients-list', component: ClientListComponent },
   { path: 'list', component: ListComponent },
