@@ -9,7 +9,7 @@
 
     <label class="green-text label" for="password">Password*</label>
     <input class="input" type="password" id="pass" name="password" placeholder="password"  required />
-    <a id="link-forgot" class="white-text underline-txt" [routerLink]="">Forgot password?</a>
+    <a id="link-forgot" class="white-text underline-txt" routerLink="/forgot-password">Forgot password?</a>
 
     <input id="submit-btn" type="submit" value="Sign in" />
   </form>
@@ -27,3 +27,5 @@
    
 
 </div>
+
+<router-outlet></router-outlet>

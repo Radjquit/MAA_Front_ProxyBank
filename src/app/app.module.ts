@@ -10,7 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MatExpansionModule} from '@angular/material/expansion'
+import { MatExpansionModule} from '@angular/material/expansion';
+import { ReinitPasswordComponent } from './reinit-password/reinit-password.component';
+import { MenuComponent } from './menu/menu.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MatExpansionModule} from '@angular/material/expansion'
     AuthentificationComponent,
     ListComponent,
     ClientListComponent,
-    HomeComponent
+    HomeComponent,
+    ReinitPasswordComponent,
+    MenuComponent
 
   ],
   imports: [
