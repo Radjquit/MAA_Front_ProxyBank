@@ -17,7 +17,6 @@ import { MatExpansionModule} from '@angular/material/expansion'
     ListComponent,
     ClientListComponent,
     HomeComponent
-
   ],
   imports: [
     BrowserModule,
