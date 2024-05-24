@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ListComponent } from './list/list.component';
 import { HomeComponent } from './home/home.component';
+import { SimulationCreditComponent } from './simulation-credit/simulation-credit.component';
+import { AccountDetailListComponent } from './account-detail-list/account-detail-list.component';
 
 
 const routes: Routes = [
@@ -10,6 +12,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'clients-list', component: ClientListComponent },
   { path: 'list', component: ListComponent },
+  { path: 'simulationCredit', component: SimulationCreditComponent },
+  { path: 'accountDetail', component: AccountDetailListComponent },
   { path: '**', component: HomeComponent }
 ];
 

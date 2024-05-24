@@ -9,14 +9,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MatExpansionModule} from '@angular/material/expansion'
+import { MatExpansionModule} from '@angular/material/expansion';
+import { SimulationCreditComponent } from './simulation-credit/simulation-credit.component';
+import { AccountDetailListComponent } from './account-detail-list/account-detail-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     ClientListComponent,
-    HomeComponent
+    HomeComponent,
+    SimulationCreditComponent,
+    AccountDetailListComponent
 
   ],
   imports: [

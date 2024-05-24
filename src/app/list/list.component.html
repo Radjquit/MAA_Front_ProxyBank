@@ -1,19 +1,27 @@
-@if (posts.length > 0) {
-    <mat-accordion multi="true">
-    @for (post of posts; track $index) {
-    <mat-expansion-panel>
-    <mat-expansion-panel-header>
-    {{post.id }}
-    </mat-expansion-panel-header>
-    <p>{{ post.id }}</p>
-    <mat-action-row>
-    <button mat-button color="primary">EDIT</button>
-    <!-- <button mat-button color="warn" (click)="onDelete(post.id)" >DELETE</button> -->
-    </mat-action-row>
-    </mat-expansion-panel>
+<h1>Welcome Advisor</h1>
+<table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Link 1</th>
+                <th>Link 2</th>
+            </tr>
+        </thead>
+        @if (clients.length > 0) {
+        <tbody>
+          <tr *ngFor="let bClient of clients">
+            <td>{{ bClient.id }}</td>
+            <td>{{ bClient.identity.firstName }}</td>
+            <td>{{ bClient.identity.lastName }}</td>
+            <td><a [routerLink]="['/link1', bClient.id]">Client Details</a></td>
+            <td><button (click)="goToAccountDetails(bClient)">Account Details</button></td>
+          </tr>
+        </tbody>
+    } @else {
+        <p>No client registered</p>
     }
-    </mat-accordion>
-}
-    @else {
-    <p class="info-text mat-body-1">No posts added yet!</p>
-    }
+</table>
+<button routerLink="/createClient">Create new client</button>
+<button routerLink="/simulationCredit">Simulation Credit</button>
