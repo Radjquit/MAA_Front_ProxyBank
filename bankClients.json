@@ -1,0 +1,206 @@
+{
+  "bclients": [
+    {
+      "id": 1,
+      "contactDetails": {
+        "address": "17 rue Monte Cristo",
+        "postalCode": "75020",
+        "city": "Paris",
+        "phoneNumber": "0111111111",
+        "mail": "momo.roro@wanadoo.fr"
+      },
+      "identity": {
+        "firstName": "Morgan",
+        "lastName": "Rolligner"
+      }
+    },
+    {
+      "id": 2,
+      "contactDetails": {
+        "address": "18 rue Monte Cristo",
+        "postalCode": "75021",
+        "city": "Pariis",
+        "phoneNumber": "0111211111",
+        "mail": "momo.roro@live.fr"
+      },
+      "identity": {
+        "firstName": "Morgane",
+        "lastName": "Rollinger"
+      }
+    },
+    {
+      "id": 3,
+      "contactDetails": {
+        "address": "19 rue Monte Cristo",
+        "postalCode": "75022",
+        "city": "Pariss",
+        "phoneNumber": "0111311111",
+        "mail": "momo.roro@gmail.com"
+      },
+      "identity": {
+        "firstName": "Morganna",
+        "lastName": "Rollinge"
+      }
+    },
+    {
+      "id": 4,
+      "contactDetails": {
+        "address": "20 rue Monte Cristo",
+        "postalCode": "75023",
+        "city": "Pari",
+        "phoneNumber": "0111411111",
+        "mail": "momo.roro@outlook.com"
+      },
+      "identity": {
+        "firstName": "Morganne",
+        "lastName": "Rolinger"
+      }
+    },
+    {
+      "id": 5,
+      "contactDetails": {
+        "address": "21 rue Monte Cristo",
+        "postalCode": "75024",
+        "city": "Pariis",
+        "phoneNumber": "0111511111",
+        "mail": "momo.roro@yahoo.com"
+      },
+      "identity": {
+        "firstName": "Morgaine",
+        "lastName": "Rollinar"
+      }
+    },
+    {
+      "id": 6,
+      "contactDetails": {
+        "address": "22 rue Monte Cristo",
+        "postalCode": "75025",
+        "city": "Pari",
+        "phoneNumber": "0111611111",
+        "mail": "momo.roro@icloud.com"
+      },
+      "identity": {
+        "firstName": "Morgan",
+        "lastName": "Rollingar"
+      }
+    },
+    {
+      "id": 7,
+      "contactDetails": {
+        "address": "23 rue Monte Cristo",
+        "postalCode": "75026",
+        "city": "Pariss",
+        "phoneNumber": "0111711111",
+        "mail": "momo.roro@protonmail.com"
+      },
+      "identity": {
+        "firstName": "Morganna",
+        "lastName": "Rolligger"
+      }
+    },
+    {
+      "id": 8,
+      "contactDetails": {
+        "address": "24 rue Monte Cristo",
+        "postalCode": "75027",
+        "city": "Pariis",
+        "phoneNumber": "0111811111",
+        "mail": "momo.roro@mail.com"
+      },
+      "identity": {
+        "firstName": "Morganne",
+        "lastName": "Rollignar"
+      }
+    },
+    {
+      "id": 9,
+      "contactDetails": {
+        "address": "25 rue Monte Cristo",
+        "postalCode": "75028",
+        "city": "Paris",
+        "phoneNumber": "0111911111",
+        "mail": "momo.roro@aol.com"
+      },
+      "identity": {
+        "firstName": "Morgaine",
+        "lastName": "Rollinar"
+      }
+    },
+    {
+      "id": 10,
+      "contactDetails": {
+        "address": "26 rue Monte Cristo",
+        "postalCode": "75029",
+        "city": "Pariss",
+        "phoneNumber": "0111011111",
+        "mail": "momo.roro@gmx.com"
+      },
+      "identity": {
+        "firstName": "Morgan",
+        "lastName": "Rollingar"
+      }
+    }
+  ],
+  "accounts": [
+    {
+      "number": "ACC01",
+      "balance": 4567,
+      "type": "Running",
+      "category": "Perso"
+    },
+    {
+      "number": "ACC02",
+      "balance": 8912,
+      "type": "Running",
+      "category": "Pro"
+    },
+    {
+      "number": "ACC03",
+      "balance": 2315,
+      "type": "Running",
+      "category": "Pro"
+    },
+    {
+      "number": "ACC04",
+      "balance": 642,
+      "type": "Running",
+      "category": "Perso"
+    },
+    {
+      "number": "ACC05",
+      "balance": 9823,
+      "type": "Saving",
+      "category": "Perso"
+    },
+    {
+      "number": "ACC06",
+      "balance": 1254,
+      "type": "Running",
+      "category": "Pro"
+    },
+    {
+      "number": "ACC07",
+      "balance": 7854,
+      "type": "Saving",
+      "category": "Pro"
+    },
+    {
+      "number": "ACC08",
+      "balance": 3215,
+      "type": "Saving",
+      "category": "Pro"
+    },
+    {
+      "number": "ACC09",
+      "balance": 5421,
+      "type": "Running",
+      "category": "Perso"
+    },
+    {
+      "number": "ACC10",
+      "balance": 687,
+      "type": "Saving",
+      "category": "Perso"
+    }
+  ]
+}

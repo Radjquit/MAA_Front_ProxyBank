@@ -1,43 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Client } from '../model/client';
+import { BankClientService } from '../services/bank-client.service';
+import { BankClient } from '../model/bank-client';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
 
-  posts:Client[] = [
-    {
-      id: 1, 
-      contactDetails : {
-        address: '17 rue Monte Cristo',
-        postalCode: '75020',
-        city: 'Paris',
-        phoneNumber: '0111111111',
-        mail: 'momo.roro@wanadoo.fr'
-      },
-      identity:{
-        firstName:'Morgan',
-        lastName:'Rolligner'
-      }
-    },
-    {
-      id: 2, 
-      contactDetails : {
-        address: '18 rue Monte Cristo',
-        postalCode: '75021',
-        city: 'Pariis',
-        phoneNumber: '0111211111',
-        mail: 'momo.roro@live.fr'
-      },
-      identity:{
-        firstName:'Morgane',
-        lastName:'Rollinger'
-      }
-    }
-  ]
+  constructor(private bcService:BankClientService, private router: Router){}
 
+  clients: BankClient[] = []
+
+  ngOnInit() {
+    this.loadClients()
+  }
+
+
+  loadClients() {
+    return this.bcService.getClients().subscribe((data: BankClient[]) => { console.log(data);
+      this.clients = data;
+    })
+  }
+
+  goToAccountDetails(bClient: BankClient) {
+    this.router.navigate(['/accountDetail'], { state: { client: bClient } });
+  }
   
 }

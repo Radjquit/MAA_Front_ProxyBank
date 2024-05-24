@@ -4,37 +4,47 @@ import { Observable, catchError, throwError } from 'rxjs';
 import { BankClient } from '../model/bank-client';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BankClientService {
 
   endpoint = 'http://localhost:8080';
+  //endpoint = 'http://localhost:3000';
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-     httpOptions = {
-        headers: new HttpHeaders({
-             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin' : '*'
-        })
-    }
+  //httpOptions = {}
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    }),
+  };
 
-    createClient(client:BankClient): Observable<BankClient> {
-      return this.http.post<BankClient>(this.endpoint + '/clients', JSON.stringify(client), this.httpOptions)
-          .pipe(
-              catchError(this.handleError)
-          )
-    }
+  createClient(client: BankClient): Observable<BankClient> {
+    return this.http
+      .post<BankClient>(
+        this.endpoint + '/clients',
+        JSON.stringify(client),
+        this.httpOptions
+      )
+      .pipe(catchError(this.handleError));
+  }
 
-  handleError(error:any) {
+  getClients(): Observable<BankClient[]> {
+    return this.http
+      .get<BankClient[]>(this.endpoint + '/bclients', this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  handleError(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
-        errorMessage = error.error.message;
+      errorMessage = error.error.message;
     } else {
-        errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     window.alert(errorMessage);
     return throwError(() => new Error(errorMessage));
   }
-
 }
