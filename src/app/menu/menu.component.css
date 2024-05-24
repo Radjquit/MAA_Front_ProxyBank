@@ -1,0 +1,14 @@
+p, * {
+  color: #FFFFFF;
+}
+
+#desktop-menu {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  #desktop-menu {
+    display: block;
+  }
+
+ }

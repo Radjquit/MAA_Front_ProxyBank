@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
 import { ListComponent } from './list/list.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,17 +14,22 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatExpansionModule} from '@angular/material/expansion';
 import { SimulationCreditComponent } from './simulation-credit/simulation-credit.component';
 import { AccountDetailListComponent } from './account-detail-list/account-detail-list.component'
+import { ReinitPasswordComponent } from './reinit-password/reinit-password.component';
+import { MenuComponent } from './menu/menu.component'
 
 @NgModule({
   declarations: [
     AppComponent,
+    AuthentificationComponent,
     ListComponent,
     ClientListComponent,
     HomeComponent,
     FormComponent,
     HomeComponent,
     SimulationCreditComponent,
-    AccountDetailListComponent
+    AccountDetailListComponent,
+    ReinitPasswordComponent,
+    MenuComponent
 
   ],
   imports: [
