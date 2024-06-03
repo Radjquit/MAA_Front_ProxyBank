@@ -2,6 +2,10 @@ p, * {
   color: #FFFFFF;
 }
 
+a {
+  text-decoration: none;
+}
+
 #desktop-menu {
   display: none;
 }
@@ -71,7 +75,7 @@ li > svg {
     cursor: pointer;
   }
   
-  #desktop-menu-list > li:focus {
+  #desktop-menu-list > li:focus, a:focus {
     display: inline;
     text-decoration: none;
     background-image: linear-gradient(transparent, transparent),linear-gradient(transparent, transparent),linear-gradient(to right, #24FF00, #03C4D0);
