@@ -15,9 +15,12 @@ export class AccountDetailListComponent implements OnInit{
 
   client!: BankClient
   accounts: Account[] = []
+  accountNumber: number=0
 
   ngOnInit() {
     this.client=history.state.client
+    this.accounts = this.accounts.concat(this.client.currentAccounts).concat(this.client.savingAccounts);
+    this.accountNumber = this.accounts.length
   }
 
 

@@ -3,6 +3,7 @@ import { Client } from '../model/client';
 import { BankClientService } from '../services/bank-client.service';
 import { BankClient } from '../model/bank-client';
 import { Router } from '@angular/router';
+import { AccountType } from '../model/account';
 
 @Component({
   selector: 'app-list',
@@ -23,6 +24,10 @@ export class ListComponent implements OnInit {
   loadClients() {
     return this.bcService.getClients().subscribe((data: BankClient[]) => { console.log(data);
       this.clients = data;
+      this.clients.forEach(client => {
+        client.currentAccounts.forEach(ca=>ca.type=AccountType.RUNNING);
+        client.savingAccounts.forEach(sa=>sa.type=AccountType.SAVING);
+      })
     })
   }
 

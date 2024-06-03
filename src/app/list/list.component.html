@@ -1,8 +1,8 @@
-<h1>Welcome Advisor</h1>
+<div id="content">
+<h1 id="title" class="green-text">Welcome Advisor</h1>
 <table>
-        <thead>
+        <thead id="header">
             <tr>
-                <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Link 1</th>
@@ -11,11 +11,10 @@
         </thead>
         @if (clients.length > 0) {
         <tbody>
-          <tr *ngFor="let bClient of clients">
-            <td>{{ bClient.id }}</td>
+          <tr class="white-text" *ngFor="let bClient of clients">
             <td>{{ bClient.identity.firstName }}</td>
             <td>{{ bClient.identity.lastName }}</td>
-            <td><a [routerLink]="['/link1', bClient.id]">Client Details</a></td>
+            <td><button [routerLink]="['/link1', bClient.id]">Client Details</button></td>
             <td><button (click)="goToAccountDetails(bClient)">Account Details</button></td>
           </tr>
         </tbody>
@@ -23,5 +22,37 @@
         <p>No client registered</p>
     }
 </table>
-<button routerLink="/createClient">Create new client</button>
-<button routerLink="/simulationCredit">Simulation Credit</button>
+<button id ="submit-btn" routerLink="/form">Create new client 
+  <svg id="dinoEgg" width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g filter="url(#filter0_dd_16_972)">
+    <rect x="4.5" y="8" width="22" height="22" transform="matrix(-0.999574 0.0291693 0.0291693 0.999574 25.9907 0)" fill="url(#pattern0_16_972)" shape-rendering="crispEdges"/>
+    </g>
+    <defs>
+    <filter id="filter0_dd_16_972" x="0" y="0" width="30.6326" height="30.6323" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+    <feOffset dy="4"/>
+    <feGaussianBlur stdDeviation="2"/>
+    <feComposite in2="hardAlpha" operator="out"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_16_972"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+    <feOffset dy="4"/>
+    <feGaussianBlur stdDeviation="2"/>
+    <feComposite in2="hardAlpha" operator="out"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+    <feBlend mode="normal" in2="effect1_dropShadow_16_972" result="effect2_dropShadow_16_972"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_16_972" result="shape"/>
+    </filter>
+    <pattern id="pattern0_16_972" patternContentUnits="objectBoundingBox" width="1" height="1">
+    <use xlink:href="#image0_16_972" transform="scale(0.0104167)"/>
+    </pattern>
+    <image id="image0_16_972" width="96" height="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFDklEQVR4nO2dW4hVVRjHf+WUNVcZIrKiECsfJLr40IM4YQXB9FCmE6bUQFBgSb1YUpH0UBThi10gEV966DLSBSp7MCLsITKhQEOzMrqMwmg51Sijk7NkwTdwGM5l733W3utbe68f/GGYmbPWWf913eusbx2IRCKRSCQSiUQiET30AmuAbcAeYAw4A5gmOgEcAj4GngVuAc7zXZDQWARsB061MDupDgNPAX2+C6adTmAzMOXI+Nk6DjwGnO+7oBq5FtiXk/Gz9SVwpe8Ca+ImGd9NgRoFbvRdcC0tf6xg82f0L3ArFR/z93kyf0Z2or+birLZs/kzmpal7s3SKCqz1JxSYH49TQAHgJ3Ao2WdsLcrMNoklG0oW4H5lOgJ96QCY01K/QMMUgLWKDDTZNT/wDoCZ5sDI/4AVgE9ontlD6ioSgi6J+xxYH5/nXTt7/4sqBLGgcsIlGNtFn5Vk7TvK3A4epNAOd1mwXuapN1X8OroCgKk3YK3whQo+5wQHGWqgE8IkDJVwEECpEwV8B8BYkqkcQLElEj7CRBTIr1PgJgS6QECxJREE8A8AsSURJsIFFMC/Qp0ESgmcJ0ClhAwJvBxf5DAcWnIoQI/iLHDzg2UAFdHSbbKOHwx8LJ8UpWH8Scl/Wbb4EHRriE/AcvqpLtM/ubixNwP8pD1YKhLzWZkNeYssKXF4alO+Z+zKSfVdXJWKdiVTRqymP8zMJAijwF5TZK0n6NipB3rX83YMrvktdMt8gh6SZmFNKuO2xzktxT4sUk+l1MxXmtxJH0aeN3xeNwladbrDfakXuW4ALgLeHtWLJiN51qeY77LJY/aCXgOFacHGAZeALoLyK9b8hquaut3RQfwtMj+XFnsQ8tG4JIC81w864jj9wXHfNkDYI8Ae1HAjAmTwAhwR47B0R1S2ZN1JtMzsmVg55e8WCJbIBM1+Xqn3krmdzHj6hxbvWkg171hvlR6o20O77TaPtgFDLXRMjuatPpGarc3zJGePJLgegTvJDXlqOzTXJ9DqzeOeoMNm30e+C1FHt7JYsxemcS6Hbb6rL3hIumhuxJsW5SmAmrjrt6S7u6q1SftDYulYo63ma53XBr0hqNW30iTsiXxncM0vdNqkiqzTqOAcQVGGE/6CwWMKjDCeJJdLanYijAV1X4UsFOBEcaTPkXJByymotqCAp5QYITxpMdRwFIFRhhPUnHj1tycH55MBtnd2JU1d0mskIhGl3lMyjaGCr5SZn5/nffYL/dMuMpnN4rYqMB4I7ItvxFDZQ3QWJBxJ9HkoGaHaHsd5nMdyvgmgAroc5THtyhkWIH5RibcRqx0lIe9AlkdFyrZFzrYZBJ2Ecwxpvl6yw0KKsDIamdIxvxeafmuImmeQTF2XfxLwn30d4DVMoF3yvlNe0b/fuA9Bxc75aGjIZymW9GiEB8BVyVIZ6FEqRhFWksgfFDnzU/LEJWWDSkjXvLSFyF9G0e9p077sJaVJz2bfyxhr1XFQM04/pmD9D70ZL7tfXcS8C25U3LgqV2u8TQx294XNC63bEcKNv9Fh++9FKwt0PxXfBdWI4sKMN5G3K/3XVCt9ORs/hHgdt+F1ExXjubvKDjKJ0gW5mD8gSp/kU9aVjs0/rDcEVHpAL+07HAwwX4O3BPjg9OzIOOD2An5dtWHgUsz5BsRBiWYY7cEzNm9pr9Fo7IN/jXwLvAS8JAEYcQv74xEIpFIJBKJRCJo4hyHwBnvJTkjfAAAAABJRU5ErkJggg=="/>
+    </defs>
+    </svg>
+</button>
+<button id ="submit-btn" routerLink="/simulationCredit">Simulation Credit</button>
+</div>
+
+
+  

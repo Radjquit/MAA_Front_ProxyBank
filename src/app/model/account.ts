@@ -1,5 +1,5 @@
 export class Account {
-    number:string = ''
+    accountNumber:string = ''
     balance!:number
     type!:AccountType
     category!:AccountCat

@@ -1,2 +1,29 @@
-<p>account-detail-list works!</p>
-<p> {{client.id}}</p>
+<div id="content">
+    <h1 id="title" class="green-text">{{client.identity.firstName}} {{client.identity.lastName}}'s accounts details</h1>
+    <table>
+            <thead id="header">
+                <tr>
+                    <th>Account</th>
+                    <th>Type</th>
+                    <th>Pro/Perso</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            @if (accountNumber > 0) {
+            <tbody>
+              <tr class="white-text" *ngFor="let acc of accounts">
+                <td>{{ acc.accountNumber }}</td>
+                <td>{{ acc.type }}</td>
+                <td>{{ acc.category }}</td>
+                <td [ngClass]="acc.balance <  0 ? 'red-text' : 'white-text'">{{ acc.balance }}</td>
+              </tr>
+            </tbody>
+        } @else {
+            <p>No account registered</p>
+        }
+    </table>
+    <button id ="submit-btn" routerLink="/list">Back to Client List</button>
+</div>
+    
+    
+      
