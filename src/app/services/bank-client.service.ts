@@ -31,9 +31,28 @@ export class BankClientService {
       .pipe(catchError(this.handleError));
   }
 
+  deleteClient(id:number) {
+    return this.http.delete<BankClient>(this.endpoint + '/clients/' + id, this.httpOptions)
+        .pipe(
+            catchError(this.handleError)
+        )
+  }
+
   getClients(): Observable<BankClient[]> {
     return this.http
-      .get<BankClient[]>(this.endpoint + '/bclients', this.httpOptions)
+      .get<BankClient[]>(this.endpoint + '/clients', this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  getClientById(id:any): Observable<BankClient> {
+    return this.http
+      .get<BankClient>(this.endpoint + '/clients/' + id, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  updateClient(id : number, client : BankClient){
+    return this.http
+      .put<BankClient>(this.endpoint + '/clients/' + id,JSON.stringify(client), this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 

@@ -15,7 +15,7 @@
             <td>{{ bClient.id }}</td>
             <td>{{ bClient.identity.firstName }}</td>
             <td>{{ bClient.identity.lastName }}</td>
-            <td><a [routerLink]="['/link1', bClient.id]">Client Details</a></td>
+            <td><a (click)="goToClientDetails(bClient)">Client Details</a></td>
             <td><button (click)="goToAccountDetails(bClient)">Account Details</button></td>
           </tr>
         </tbody>

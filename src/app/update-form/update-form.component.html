@@ -1,0 +1,32 @@
+<div id="form-content">
+    <h1 id="title-authent" class="green-text">Update a client</h1>
+    <p id="form-text-authent">Type the Client's new infos</p>
+    <form #myForm = "ngForm" id="form-create">
+        <label class="green-text label" for="lastName">Last Name*</label>
+        <input [(ngModel)]="client.identity.lastName" class="formText" placeholder="Last Name" name="lastName" id="formText" [disabled]="formIsDisabled()"/> 
+        <label class="green-text label" for="firstName">First Name*</label>
+        <input [(ngModel)]="client.identity.firstName" class="formText" placeholder="First Name" name="firstName" id="formText"[disabled]="formIsDisabled()"/> 
+        <label class="green-text label" for="mail">Mail address*</label>
+        <input [(ngModel)]="client.contactDetails.mail" class="formText" placeholder="Mail adress" name="mail" type="email" [disabled]="formIsDisabled()"/> 
+        <label class="green-text label" for="phoneNumber">Phone Number*</label>
+        <input [(ngModel)]="client.contactDetails.phoneNumber" class="formText" placeholder="Phone number" name="phoneNumber" [disabled]="formIsDisabled()"/> 
+        <label class="green-text label" for="address">Address(number & street)*</label>
+        <input [(ngModel)]="client.contactDetails.address" class="formText" placeholder="Address" name="address" id="formText" [disabled]="formIsDisabled()"/> 
+        <label class="green-text label" for="city">City*</label>
+        <input [(ngModel)]="client.contactDetails.city" class="formText" placeholder="City" name="city" id="formText" [required]="true" [disabled]="formIsDisabled()"/> 
+        <label class="green-text label" for="postalCode">Postal Code*</label>
+        <input [(ngModel)]="client.contactDetails.postalCode" class="formText" placeholder="Postal Code" name="postalCode" [required]="true" [disabled]="formIsDisabled()"/> 
+    </form>
+
+    @if (disabled) {
+        <button (click)="enableForm()" id="create-btn">Update Client</button>
+    } @else {
+        <button (click)="updateClient(client.id)" id="create-btn">Save changes</button>
+    }
+    
+    <button (click)="deleteClient(client.id)" id="delete-btn">
+        <img src="../assets/meteor.svg" id="meteorite" alt="">     
+        Delete Client
+        <img src="../assets/meteor.svg" id="meteorite" alt="">
+    </button>
+</div>
