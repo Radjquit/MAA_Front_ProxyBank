@@ -14,7 +14,7 @@
           <tr class="white-text" *ngFor="let bClient of clients">
             <td>{{ bClient.identity.firstName }}</td>
             <td>{{ bClient.identity.lastName }}</td>
-            <td><button [routerLink]="['/link1', bClient.id]">Client Details</button></td>
+            <td><button (click)="goToClientDetails(bClient)">Client Details</button></td>
             <td><button (click)="goToAccountDetails(bClient)">Account Details</button></td>
           </tr>
         </tbody>

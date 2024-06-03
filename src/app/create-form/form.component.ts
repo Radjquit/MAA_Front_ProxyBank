@@ -1,9 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Client } from '../model/client';
-import { Identity } from '../model/identity';
-import { ClientService } from '../services/client.service';
-import { Router, RouterLink } from '@angular/router';
-import { ContactDetails } from '../model/contact-details';
+import { Router } from '@angular/router';
 import { BankClient } from '../model/bank-client';
 import { BankClientService } from '../services/bank-client.service';
 
@@ -23,11 +19,9 @@ export class FormComponent implements OnInit{
   }
 
   createClient() {
-    console.log(this.client);
-    
     this.service.createClient(this.client).subscribe((data: {}) => {
       this.router.navigate(['/list']);
-  });
+    });
   }
 
   updateClient() {
@@ -35,11 +29,21 @@ export class FormComponent implements OnInit{
 
   }
 
-  deleteClient() {
-    
-  }
+  // deleteClient(id : number) {
+  //   if (window.confirm('Are you sure, you want to delete?')){
+  //       this.service.deleteClient(id).subscribe(data => {
+  //         this.loadClients()
+  //     })
+  //   }
+  // }
 
   ngOnInit(): void {;
   }
+
+  // loadClients() {
+  //   return this.service.getClients().subscribe((data: {}) => { console.log(data);
+  //     this.client = data;
+  //   })
+  // }
 
 }
