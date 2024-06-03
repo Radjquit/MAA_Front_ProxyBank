@@ -6,9 +6,81 @@ p, * {
   display: none;
 }
 
+
+
+#btn-toggle-mobile {
+  border: none;
+  background-color: inherit;
+  margin: 0 1rem 0 0;
+  position: absolute;
+  right: 1%;
+  top: 3%;
+}
+
+#mobile-menu-list {
+  position: absolute;
+  top: 2%;
+  right: 0%;
+  background-color: #F1F1F1;
+  width: 60%;
+  padding: 1rem;
+  list-style: none;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#mobile-menu-list > li {
+  color: black;
+  cursor: pointer;
+}
+
+#mobile-menu-list > li:focus {
+  background-image: linear-gradient(transparent, transparent),linear-gradient(transparent, transparent),linear-gradient(to right, #24FF00, #03C4D0);
+  background-repeat: no-repeat;
+  background-position: 120%, 120%, 29px 90%;
+  background-size: 70% 3px;
+
+}
+
+li > svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
 @media (min-width: 1200px) {
   #desktop-menu {
     display: block;
   }
 
+  #mobile-menu {
+    display: none;
+  }
+
+  #desktop-menu-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    padding-right: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+
+
+  }
+
+  #desktop-menu-list > li {
+    cursor: pointer;
+  }
+  
+  #desktop-menu-list > li:focus {
+    display: inline;
+    text-decoration: none;
+    background-image: linear-gradient(transparent, transparent),linear-gradient(transparent, transparent),linear-gradient(to right, #24FF00, #03C4D0);
+      background-repeat: no-repeat;
+    background-position: 120%, 122%, 0 130%;
+  
+    background-size: 100% 8px;
+  
+  }
+
  }
+

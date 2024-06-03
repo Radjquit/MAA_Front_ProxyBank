@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -12,6 +12,19 @@ export class MenuComponent {
   public showMenu = false;
   constructor() {
   }
+
+ /* @ViewChild('elementName')
+  element!: ElementRef;
+
+@HostListener ('click', ['$event']) onClick(e: any) {
+  console.log(e.target, this.element)
+  if (this.element.nativeElement.contains(e.target)) {
+    console.log("in")
+  } else {
+    console.log("out")
+  }
+}*/
+
 toggleMenu() {
   this.showMenu = !this.showMenu;
 }
