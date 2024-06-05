@@ -97,4 +97,12 @@
      cursor: pointer;
   
    }
+
+  tbody tr:nth-child(even) {
+    background-color: #5cc0b8;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #5cc09a;
+  }
   }
