@@ -24,11 +24,7 @@
 
 #create-btn {
     width: 70%;
-    padding: 0.25rem 0.8rem;
     margin: 2rem auto;
-    background: #24FF00;
-    border-radius: 4px;
-    border: none;
     font-family: 'Courier New', Courier, monospace;
     font:bold;
   
@@ -36,11 +32,8 @@
 
  #delete-btn {
     width: 70%;
-    padding: 0.25rem 0.8rem;
     margin: 2rem auto;
     background: #FF511A;
-    border-radius: 4px;
-    border: none;
     font: bold;
     font-family: 'Courier New', Courier, monospace;
 } 
@@ -56,9 +49,7 @@
     margin: 1rem 0 0.2rem 0;
 }
 
-.green-text {
-    color: #24FF00;
-}
+
 
 @media (min-width: 768px) {
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClientListComponent } from './client-list/client-list.component';
 import { ListComponent } from './list/list.component';
 import { HomeComponent } from './home/home.component';
 import { FormComponent } from './create-form/form.component';
@@ -15,7 +14,6 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'signin', component: AuthentificationComponent},
   { path: 'home', component: HomeComponent },
-  { path: 'clients-list', component: ClientListComponent },
   { path: 'list', component: ListComponent },
   { path : 'createClient', component : FormComponent},
   { path: 'simulationCredit', component: SimulationCreditComponent },
