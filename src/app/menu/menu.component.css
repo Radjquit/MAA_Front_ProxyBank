@@ -1,16 +1,12 @@
-p, * {
-  color: #FFFFFF;
-}
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 #desktop-menu {
   display: none;
 }
-
-
 
 #btn-toggle-mobile {
   border: none;
@@ -38,7 +34,7 @@ a {
 }
 
 #mobile-menu-list > li:focus {
-  background-image: linear-gradient(transparent, transparent),linear-gradient(transparent, transparent),linear-gradient(to right, #24FF00, #03C4D0);
+  background-image: linear-gradient(transparent, transparent),linear-gradient(transparent, transparent),linear-gradient(to right, #82f76f, #03C4D0);
   background-repeat: no-repeat;
   background-position: 120%, 120%, 29px 90%;
   background-size: 70% 3px;
@@ -73,17 +69,22 @@ li > svg {
 
   #desktop-menu-list > li {
     cursor: pointer;
+    position: relative;
   }
   
-  #desktop-menu-list > li:focus, a:focus {
+  #desktop-menu-list > li:focus  a:focus {
     display: inline;
     text-decoration: none;
-    background-image: linear-gradient(transparent, transparent),linear-gradient(transparent, transparent),linear-gradient(to right, #24FF00, #03C4D0);
-      background-repeat: no-repeat;
-    background-position: 120%, 122%, 0 130%;
-  
-    background-size: 100% 8px;
-  
+  }
+
+  #desktop-menu-list li:focus-within a::after {   
+    content: "";   
+    position: absolute;   
+    height: 5px;   
+    top: 25px;   
+    left: 0;   
+    right: 0;   
+    background: linear-gradient(to right, #82f76f, #03C4D0); 
   }
 
  }

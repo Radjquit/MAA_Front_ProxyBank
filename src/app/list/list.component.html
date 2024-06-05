@@ -3,26 +3,36 @@
 <table>
         <thead id="header">
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Link 1</th>
-                <th>Link 2</th>
+                <th>Name</th>
+                <th>Balance</th>
+                <th>Info</th>
+                <th>Account</th>
             </tr>
         </thead>
         @if (clients.length > 0) {
         <tbody>
           <tr class="white-text" *ngFor="let bClient of clients">
-            <td>{{ bClient.identity.firstName }}</td>
-            <td>{{ bClient.identity.lastName }}</td>
-            <td><button (click)="goToClientDetails(bClient)">Client Details</button></td>
-            <td><button (click)="goToAccountDetails(bClient)">Account Details</button></td>
+            <td>{{ bClient.identity.firstName }} {{ bClient.identity.lastName }}</td>
+            <td>{{ processBalance(bClient) }}</td>
+            <td><button class="icon" (click)="goToClientDetails(bClient)">
+              <svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.08333 6.6C0.782407 6.6 0.526741 6.49293 0.316333 6.2788C0.105444 6.06516 0 5.80556 0 5.5C0 5.19444 0.105444 4.93484 0.316333 4.7212C0.526741 4.50707 0.782407 4.4 1.08333 4.4C1.38426 4.4 1.63993 4.50707 1.85033 4.7212C2.06122 4.93484 2.16667 5.19444 2.16667 5.5C2.16667 5.80556 2.06122 6.06516 1.85033 6.2788C1.63993 6.49293 1.38426 6.6 1.08333 6.6ZM1.08333 2.2C0.782407 2.2 0.526741 2.09293 0.316333 1.8788C0.105444 1.66516 0 1.40556 0 1.1C0 0.794444 0.105444 0.534845 0.316333 0.3212C0.526741 0.107067 0.782407 0 1.08333 0C1.38426 0 1.63993 0.107067 1.85033 0.3212C2.06122 0.534845 2.16667 0.794444 2.16667 1.1C2.16667 1.40556 2.06122 1.66516 1.85033 1.8788C1.63993 2.09293 1.38426 2.2 1.08333 2.2ZM1.08333 11C0.782407 11 0.526741 10.8929 0.316333 10.6788C0.105444 10.4652 0 10.2056 0 9.9C0 9.59444 0.105444 9.33484 0.316333 9.1212C0.526741 8.90707 0.782407 8.8 1.08333 8.8C1.38426 8.8 1.63993 8.90707 1.85033 9.1212C2.06122 9.33484 2.16667 9.59444 2.16667 9.9C2.16667 10.2056 2.06122 10.4652 1.85033 10.6788C1.63993 10.8929 1.38426 11 1.08333 11ZM4.33333 10.6333C4.1287 10.6333 3.9573 10.5629 3.81911 10.4221C3.68044 10.2818 3.61111 10.1078 3.61111 9.9C3.61111 9.69222 3.68044 9.51818 3.81911 9.37787C3.9573 9.23707 4.1287 9.16667 4.33333 9.16667H12.2778C12.4824 9.16667 12.6538 9.23707 12.792 9.37787C12.9307 9.51818 13 9.69222 13 9.9C13 10.1078 12.9307 10.2818 12.792 10.4221C12.6538 10.5629 12.4824 10.6333 12.2778 10.6333H4.33333ZM4.33333 6.23333C4.1287 6.23333 3.9573 6.16293 3.81911 6.02213C3.68044 5.88182 3.61111 5.70778 3.61111 5.5C3.61111 5.29222 3.68044 5.11793 3.81911 4.97713C3.9573 4.83682 4.1287 4.76667 4.33333 4.76667H12.2778C12.4824 4.76667 12.6538 4.83682 12.792 4.97713C12.9307 5.11793 13 5.29222 13 5.5C13 5.70778 12.9307 5.88182 12.792 6.02213C12.6538 6.16293 12.4824 6.23333 12.2778 6.23333H4.33333ZM4.33333 1.83333C4.1287 1.83333 3.9573 1.76318 3.81911 1.62287C3.68044 1.48207 3.61111 1.30778 3.61111 1.1C3.61111 0.892222 3.68044 0.717933 3.81911 0.577133C3.9573 0.436822 4.1287 0.366667 4.33333 0.366667H12.2778C12.4824 0.366667 12.6538 0.436822 12.792 0.577133C12.9307 0.717933 13 0.892222 13 1.1C13 1.30778 12.9307 1.48207 12.792 1.62287C12.6538 1.76318 12.4824 1.83333 12.2778 1.83333H4.33333Z" fill="white"/>
+                </svg>
+                
+            </button></td>
+            <td><button class="icon" (click)="goToAccountDetails(bClient)">
+              <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6 2.13333V0H21V2.13333H12.6ZM12.6 6.4V4.26667H21V6.4H12.6ZM12.6 10.6667V8.53333H21V10.6667H12.6ZM6.3 9.6C5.425 9.6 4.68125 9.28889 4.06875 8.66667C3.45625 8.04445 3.15 7.28889 3.15 6.4C3.15 5.51111 3.45625 4.75556 4.06875 4.13333C4.68125 3.51111 5.425 3.2 6.3 3.2C7.175 3.2 7.91875 3.51111 8.53125 4.13333C9.14375 4.75556 9.45 5.51111 9.45 6.4C9.45 7.28889 9.14375 8.04445 8.53125 8.66667C7.91875 9.28889 7.175 9.6 6.3 9.6ZM0 16V13.9733C0 13.6 0.0875 13.2444 0.2625 12.9067C0.4375 12.5689 0.6825 12.3022 0.9975 12.1067C1.785 11.6267 2.62062 11.2667 3.50437 11.0267C4.38812 10.7867 5.32 10.6667 6.3 10.6667C7.28 10.6667 8.21187 10.7867 9.09562 11.0267C9.97937 11.2667 10.815 11.6267 11.6025 12.1067C11.9175 12.3022 12.1625 12.5689 12.3375 12.9067C12.5125 13.2444 12.6 13.6 12.6 13.9733V16H0Z" fill="white"/>
+                </svg>
+                
+            </button></td>
           </tr>
         </tbody>
     } @else {
         <p>No client registered</p>
     }
 </table>
-<button id ="submit-btn" routerLink="/form">Create new client 
+<button id ="submit-btn" class="btn" routerLink="/createClient">
   <svg id="dinoEgg" width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g filter="url(#filter0_dd_16_972)">
     <rect x="4.5" y="8" width="22" height="22" transform="matrix(-0.999574 0.0291693 0.0291693 0.999574 25.9907 0)" fill="url(#pattern0_16_972)" shape-rendering="crispEdges"/>
@@ -50,8 +60,10 @@
     <image id="image0_16_972" width="96" height="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFDklEQVR4nO2dW4hVVRjHf+WUNVcZIrKiECsfJLr40IM4YQXB9FCmE6bUQFBgSb1YUpH0UBThi10gEV966DLSBSp7MCLsITKhQEOzMrqMwmg51Sijk7NkwTdwGM5l733W3utbe68f/GGYmbPWWf913eusbx2IRCKRSCQSiUQiET30AmuAbcAeYAw4A5gmOgEcAj4GngVuAc7zXZDQWARsB061MDupDgNPAX2+C6adTmAzMOXI+Nk6DjwGnO+7oBq5FtiXk/Gz9SVwpe8Ca+ImGd9NgRoFbvRdcC0tf6xg82f0L3ArFR/z93kyf0Z2or+birLZs/kzmpal7s3SKCqz1JxSYH49TQAHgJ3Ao2WdsLcrMNoklG0oW4H5lOgJ96QCY01K/QMMUgLWKDDTZNT/wDoCZ5sDI/4AVgE9ontlD6ioSgi6J+xxYH5/nXTt7/4sqBLGgcsIlGNtFn5Vk7TvK3A4epNAOd1mwXuapN1X8OroCgKk3YK3whQo+5wQHGWqgE8IkDJVwEECpEwV8B8BYkqkcQLElEj7CRBTIr1PgJgS6QECxJREE8A8AsSURJsIFFMC/Qp0ESgmcJ0ClhAwJvBxf5DAcWnIoQI/iLHDzg2UAFdHSbbKOHwx8LJ8UpWH8Scl/Wbb4EHRriE/AcvqpLtM/ubixNwP8pD1YKhLzWZkNeYssKXF4alO+Z+zKSfVdXJWKdiVTRqymP8zMJAijwF5TZK0n6NipB3rX83YMrvktdMt8gh6SZmFNKuO2xzktxT4sUk+l1MxXmtxJH0aeN3xeNwladbrDfakXuW4ALgLeHtWLJiN51qeY77LJY/aCXgOFacHGAZeALoLyK9b8hquaut3RQfwtMj+XFnsQ8tG4JIC81w864jj9wXHfNkDYI8Ae1HAjAmTwAhwR47B0R1S2ZN1JtMzsmVg55e8WCJbIBM1+Xqn3krmdzHj6hxbvWkg171hvlR6o20O77TaPtgFDLXRMjuatPpGarc3zJGePJLgegTvJDXlqOzTXJ9DqzeOeoMNm30e+C1FHt7JYsxemcS6Hbb6rL3hIumhuxJsW5SmAmrjrt6S7u6q1SftDYulYo63ma53XBr0hqNW30iTsiXxncM0vdNqkiqzTqOAcQVGGE/6CwWMKjDCeJJdLanYijAV1X4UsFOBEcaTPkXJByymotqCAp5QYITxpMdRwFIFRhhPUnHj1tycH55MBtnd2JU1d0mskIhGl3lMyjaGCr5SZn5/nffYL/dMuMpnN4rYqMB4I7ItvxFDZQ3QWJBxJ9HkoGaHaHsd5nMdyvgmgAroc5THtyhkWIH5RibcRqx0lIe9AlkdFyrZFzrYZBJ2Ecwxpvl6yw0KKsDIamdIxvxeafmuImmeQTF2XfxLwn30d4DVMoF3yvlNe0b/fuA9Bxc75aGjIZymW9GiEB8BVyVIZ6FEqRhFWksgfFDnzU/LEJWWDSkjXvLSFyF9G0e9p077sJaVJz2bfyxhr1XFQM04/pmD9D70ZL7tfXcS8C25U3LgqV2u8TQx294XNC63bEcKNv9Fh++9FKwt0PxXfBdWI4sKMN5G3K/3XVCt9ORs/hHgdt+F1ExXjubvKDjKJ0gW5mD8gSp/kU9aVjs0/rDcEVHpAL+07HAwwX4O3BPjg9OzIOOD2An5dtWHgUsz5BsRBiWYY7cEzNm9pr9Fo7IN/jXwLvAS8JAEYcQv74xEIpFIJBKJRCJo4hyHwBnvJTkjfAAAAABJRU5ErkJggg=="/>
     </defs>
     </svg>
+  Create new client 
+
 </button>
-<button id ="submit-btn" routerLink="/simulationCredit">Simulation Credit</button>
+<button id ="submit-btn" class="btn" routerLink="/simulationCredit">Simulation Credit</button>
 </div>
 
 

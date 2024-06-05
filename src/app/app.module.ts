@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { ListComponent } from './list/list.component';
-import { ClientListComponent } from './client-list/client-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './create-form/form.component';
@@ -23,7 +22,6 @@ import { UpdateFormComponent } from './update-form/update-form.component';
     AppComponent,
     AuthentificationComponent,
     ListComponent,
-    ClientListComponent,
     HomeComponent,
     FormComponent,
     HomeComponent,

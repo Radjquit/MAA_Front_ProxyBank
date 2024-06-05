@@ -14,58 +14,28 @@
     margin-bottom: 0;
   }
   
-  
-  #login-text-authent {
-    color: #D6D6D6;
-    margin: 0 0 2rem 0;
-    font-size: smaller;
-  }
-  
-  
-  #form-authent {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-  }
-  
-  #link-forgot {
-    text-align: right;
-    font-size: xx-small;
-    cursor: pointer;
-  }
-  
+
   #submit-btn {
-    width: 70%;
-    padding: 0.25rem 0.8rem;
+    width: 300px;
     margin: 2rem auto;
-    background: #24FF00;
-    border-radius: 4px;
-    border: none;
   
   }
   
   #dinoEgg {
-   position: center;
-   bottom: 0;
-   right: 0;
+   position: relative;
+   top: -3px;
+
   
   }
 
   #header {
     padding: 0.25rem 0.8rem;
     margin: 2rem auto;
-    background: #24FF00;
+    background: #82f76f;
     border-radius: 4px;
     border: none;
   }
   
-  .white-text {
-   color: #FFFFFF;
-  }
-  
-  .green-text {
-   color: #24FF00;
-  }
   
   .underline-txt {
    text-decoration: underline;
@@ -92,7 +62,6 @@
   
    #submit-btn {
      margin: 4rem auto;
-     width: 50%;
      padding: 0.5rem 0.9rem;
      cursor: pointer;
   
