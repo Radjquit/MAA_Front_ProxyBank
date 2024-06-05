@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Client } from '../model/client';
 import { BankClientService } from '../services/bank-client.service';
 import { BankClient } from '../model/bank-client';
 import { Router } from '@angular/router';
@@ -38,5 +37,17 @@ export class ListComponent implements OnInit {
   goToClientDetails(bClient : BankClient) {
     this.router.navigateByUrl(`update/${bClient.id}`);
   }
+
+  processBalance(bClient: BankClient) {
+    let balance = 0
+    if (bClient.currentAccounts !== undefined) {
+      balance += bClient.currentAccounts.map((ca) => ca.balance).reduce((p, c) => p + c, 0) 
+    }
+    if (bClient.currentAccounts !== undefined) {
+      balance +=  bClient.savingAccounts.map((sa) => sa.balance).reduce((p, c) => p + c, 0)
+    }
+    return balance;
+  }
+
   
 }

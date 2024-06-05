@@ -6,6 +6,6 @@ export class BankClient {
     id!: number;
     identity: Identity = new Identity();
     contactDetails: ContactDetails = new ContactDetails();
-    currentAccounts!:  Account[];
-    savingAccounts!:  Account[];
+    currentAccounts:  Account[] = [];
+    savingAccounts:  Account[] = [];
 }

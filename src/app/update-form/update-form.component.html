@@ -19,9 +19,9 @@
     </form>
 
     @if (disabled) {
-        <button (click)="enableForm()" id="create-btn">Update Client</button>
+        <button (click)="enableForm()" id="create-btn" class="btn">Update Client</button>
     } @else {
-        <button (click)="updateClient(client.id)" id="create-btn">Save changes</button>
+        <button (click)="updateClient(client.id)" id="create-btn" class="btn">Save changes</button>
     }
     
     <button (click)="deleteClient(client.id)" id="delete-btn">
