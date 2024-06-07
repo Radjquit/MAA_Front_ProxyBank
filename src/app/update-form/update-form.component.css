@@ -22,20 +22,28 @@
     width: 80%;
 }
 
-#create-btn {
-    width: 70%;
+#submit-btn {
+    width: 300px;
     margin: 2rem auto;
-    font-family: 'Courier New', Courier, monospace;
-    font:bold;
   
-}
+  }
 
  #delete-btn {
-    width: 70%;
-    margin: 2rem auto;
-    background: #FF511A;
-    font: bold;
-    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    background: #FF848B;
+    padding: 0.25rem 0.8rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    border: 3px outset #f58d92;
+    transition: 0.1s;
+    &:hover{
+        background-color: #f45a61;
+        border: 3px outset #f26269;
+    }
 } 
 
 #meteorite {
@@ -71,9 +79,7 @@
 
   #delete-btn {
     margin: 2rem auto;
-    width: 25%;
     padding: 0.5rem 0.9rem;
     cursor: pointer;
- 
   } 
 }

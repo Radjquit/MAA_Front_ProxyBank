@@ -19,9 +19,9 @@
     </form>
 
     @if (disabled) {
-        <button (click)="enableForm()" id="create-btn" class="btn">Update Client</button>
+        <button (click)="enableForm()" id="submit-btn" class="btn">Update Client</button>
     } @else {
-        <button (click)="updateClient(client.id)" id="create-btn" class="btn">Save changes</button>
+        <button (click)="updateClient(client.id)" id="submit-btn" class="btn">Save changes</button>
     }
     
     <button (click)="deleteClient(client.id)" id="delete-btn">
@@ -29,4 +29,5 @@
         Delete Client
         <img src="../assets/meteor.svg" id="meteorite" alt="">
     </button>
+    <button id ="submit-btn" class="btn" routerLink="/list">Back to Client List</button>
 </div>

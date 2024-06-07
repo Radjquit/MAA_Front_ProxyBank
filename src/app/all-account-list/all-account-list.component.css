@@ -1,0 +1,45 @@
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+   
+  #title {
+    margin-bottom: 0;
+  }
+  
+  
+  #submit-btn {
+    width: 70%;
+    margin: 2rem auto;
+  
+  }
+  
+
+  #header {
+    padding: 0.25rem 0.8rem;
+    margin: 2rem auto;
+    background: #82f76f;
+    border-radius: 4px;
+    border: none;
+  }
+  
+    
+  
+  @media (min-width: 768px) {
+  }
+  
+  @media (min-width: 1200px) {
+
+  
+   #submit-btn {
+     margin: 4rem auto;
+     width: 50%;
+     padding: 0.5rem 0.9rem;
+     cursor: pointer;
+  
+   }
+  }

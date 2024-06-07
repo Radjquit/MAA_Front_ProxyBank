@@ -1,5 +1,5 @@
 <div id="content">
-    <h1 id="title" class="green-text">{{client.identity.firstName}} {{client.identity.lastName}}'s accounts details</h1>
+    <h1 id="title" class="green-text">Accounts details</h1>
     <table>
             <thead id="header">
                 <tr>
@@ -9,7 +9,7 @@
                     <th>Balance</th>
                 </tr>
             </thead>
-            @if (accountNumber > 0) {
+            @if (accounts.length > 0) {
             <tbody>
               <tr class="white-text" *ngFor="let acc of accounts">
                 <td>{{ acc.accountNumber }}</td>
@@ -22,9 +22,5 @@
             <p>No account registered</p>
         }
     </table>
-    <button id ="submit-btn" class="btn" routerLink="/accountDetail">Add an Account</button>
     <button id ="submit-btn" class="btn" routerLink="/list">Back to Client List</button>
 </div>
-    
-    
-      
