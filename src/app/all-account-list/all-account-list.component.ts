@@ -25,8 +25,6 @@ export class AllAccountListComponent {
     return this.acService.getAccounts().subscribe((data: Account[]) => { console.log(data);
       this.accounts = data;
 
-    })  
-    console.log(this.accounts);
-    
+    })
   }
 }

@@ -4,6 +4,8 @@
             <thead id="header">
                 <tr>
                     <th>Account</th>
+                    <!-- <th>Client's name</th>
+                    <th>Client's name</th> -->
                     <th>Type</th>
                     <th>Pro/Perso</th>
                     <th>Balance</th>
@@ -13,6 +15,8 @@
             <tbody>
               <tr class="white-text" *ngFor="let acc of accounts">
                 <td>{{ acc.accountNumber }}</td>
+                <!-- <td>{{ acc.client.identity.lastName}}</td>
+                <td>{{ acc.client.identity.firstName}}</td> -->
                 <td>{{ acc.type }}</td>
                 <td>{{ acc.category }}</td>
                 <td [ngClass]="acc.balance <  0 ? 'red-text' : 'white-text'">{{ acc.balance }}</td>
