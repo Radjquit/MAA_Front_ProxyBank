@@ -50,6 +50,4 @@ export class AccountDetailListComponent implements OnInit{
     this.accounts = this.accounts.concat(this.client.currentAccounts).concat(this.client.savingAccounts);
     this.accountNumber = this.accounts.length
   }
-
-
 }
