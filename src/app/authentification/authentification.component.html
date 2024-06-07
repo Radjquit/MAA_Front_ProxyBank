@@ -11,6 +11,13 @@
     <input [(ngModel)]="user.password" class="input" type="password" id="pass" name="password" placeholder="password"  required />
     <a id="link-forgot" class="white-text underline-txt" routerLink="/forgot-password">Forgot password?</a>
 
+    <label for="role">Choose your role</label>
+
+    <select [(ngModel)]="user.role" name="role" id="role" required>
+      <option value="manager">Manager</option>
+      <option value="advisor">Advisor</option>
+    </select>
+
   </form>
 
   <button (click)="signin()" id="submit-btn" class="btn" type="submit">Sign in</button>
