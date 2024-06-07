@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { BankClient } from '../model/bank-client';
-import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root',
@@ -59,15 +58,6 @@ export class BankClientService {
       .pipe(catchError(this.handleError));
   }
 
-  sigIn(user: User): Observable<User> {
-    return this.http
-    .post<User>(
-      this.endpoint + 'signin',
-      JSON.stringify(user),
-      this.httpOptions
-    )
-    .pipe(catchError(this.handleError))
-  }
 
   handleError(error: any) {
     let errorMessage = '';
