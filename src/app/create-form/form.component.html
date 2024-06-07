@@ -6,7 +6,7 @@
         <input [(ngModel)]="client.identity.lastName" class="formText" placeholder="Last Name" name="lastName" id="formText"  required/> 
         <label class="green-text label" for="firstName">First Name*</label>
         <input [(ngModel)]="client.identity.firstName" class="formText" placeholder="First Name" name="firstName" id="formText" required/> 
-        <label class="green-text label" for="mail">Mail address*</label>
+        <label class="green-text label" for="mail">Mail Address*</label>
         <input [(ngModel)]="client.contactDetails.mail" class="formText" placeholder="Mail adress" name="mail" type="email" required/> 
         <label class="green-text label" for="phoneNumber">Phone Number*</label>
         <input [(ngModel)]="client.contactDetails.phoneNumber" class="formText" placeholder="Phone number" name="phoneNumber" required/> 
@@ -19,10 +19,5 @@
     </form>
 
     <button (click)="createClient()" id="create-btn">Create new Client</button>
-    <!-- <button (click)="loadClients()" id="delete-btn">
-        <img src="../assets/meteor.svg" id="meteorite" alt="">     
-        Delete Client
-        <img src="../assets/meteor.svg" id="meteorite" alt="">
-            
-    </button> -->
+
 </div>

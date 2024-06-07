@@ -17,6 +17,7 @@ import { ReinitPasswordComponent } from './reinit-password/reinit-password.compo
 import { MenuComponent } from './menu/menu.component';
 import { UpdateFormComponent } from './update-form/update-form.component';
 import { AllAccountListComponent } from './all-account-list/all-account-list.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +32,8 @@ import { AllAccountListComponent } from './all-account-list/all-account-list.com
     ReinitPasswordComponent,
     MenuComponent,
     UpdateFormComponent,
-    AllAccountListComponent
-
+    AllAccountListComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,

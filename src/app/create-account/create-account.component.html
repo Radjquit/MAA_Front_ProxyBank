@@ -1,0 +1,21 @@
+<div id="form-content">
+    <h1 id="title-form" class="green-text">Create an Account</h1>
+    <p id="form-text-form">Type the new account's infos</p>
+    <form #mainForm = "ngForm" id="form-create">
+        <label class="green-text label" for="accountBalance">Account Balance*</label>
+        <input [(ngModel)]="account.balance" class="formText" placeholder="Balance" name="balance" id="formText"  required/> 
+        <label class="green-text label" for="type">Account's Type*</label>
+        <select [(ngModel)]='account.type' name="dropdownOption" id="dropdownOption" class='form-control'>
+            <option value="Running">Running</option>
+            <option value="Saving">Saving</option>
+        </select>
+        <label class="green-text label" for="category">Account's Category*</label>
+        <select [(ngModel)]='account.category' name="dropdownOption" id="dropdownOption" class='form-control'>
+            <option value="Perso">Perso</option>
+            <option value="Pro">Pro</option>
+        </select>
+    </form>
+
+    <button (click)="createAccount()" id="create-btn">Create new Account</button>
+    <button (click)="goToAccountDetails()" id="create-btn">Back To Accounts Details</button>
+</div>
