@@ -3,16 +3,25 @@
   <h1 id="title-authent" class="green-text">Welcome back</h1>
   <p id="login-text-authent" class="txt">Enter you login details</p>
 
-  <form action="/signin" method="post" id="form-authent">
+  <form #authentForm="ngForm" id="form-authent">
     <label class="green-text label" for="username">User Id*</label>
-    <input class="input" type="text" name="username" id="name" placeholder="User name" required />
+    <input [(ngModel)]="user.username" class="input" type="text" name="username" id="name" placeholder="User name" required />
 
     <label class="green-text label" for="password">Password*</label>
-    <input class="input" type="password" id="pass" name="password" placeholder="password"  required />
+    <input [(ngModel)]="user.password" class="input" type="password" id="pass" name="password" placeholder="password"  required />
     <a id="link-forgot" class="white-text underline-txt" routerLink="/forgot-password">Forgot password?</a>
 
-    <input id="submit-btn" class="btn" type="submit" value="Sign in" />
+    <label for="role">Choose your role</label>
+
+    <select [(ngModel)]="user.role" name="role" id="role" required>
+      <option value="manager">Manager</option>
+      <option value="advisor">Advisor</option>
+    </select>
+
   </form>
+
+  <button (click)="signin()" id="submit-btn" class="btn" type="submit">Sign in</button>
+
 
 
     <svg id="dino" width="150" height="120" viewBox="0 0 83 74" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin">

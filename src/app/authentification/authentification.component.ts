@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../model/user';
-import { BankClientService } from '../services/bank-client.service';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-authentification',
@@ -14,16 +14,16 @@ export class AuthentificationComponent implements OnInit {
 
 
 
-  constructor(public service: BankClientService, public router : Router){
+  constructor(public service: UserService, public router : Router){
   }
   ngOnInit(): void {
   }
 
- /* signIn() { 
-    this.service.sigIn(this.user).subscribe((data: {}) => {
-      console.log(this.user)
-      this.router.navigate(['/signin']);
+  signin() { 
+    this.service.signin(this.user).subscribe((data: {}) => {
+      console.log(data, this.user)
+      this.router.navigate(['/home']);
   });
-  }*/
+  }
 
 }

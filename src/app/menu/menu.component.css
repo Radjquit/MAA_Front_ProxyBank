@@ -67,6 +67,11 @@ li > svg {
 
   }
 
+  #desktop-menu-list #icon-content:focus-within #home-icon::after  {
+    content: inherit;
+    background: none;
+  }
+
   #desktop-menu-list > li {
     cursor: pointer;
     position: relative;

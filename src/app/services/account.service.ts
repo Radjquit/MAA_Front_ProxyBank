@@ -1,15 +1,15 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Account } from '../model/account';
 import { Observable, catchError, throwError } from 'rxjs';
-import { BankClient } from '../model/bank-client';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class BankClientService {
-
+export class AccountService {
   endpoint = 'http://localhost:8080';
   //endpoint = 'http://localhost:3000';
+ 
 
   constructor(private http: HttpClient) {}
 
@@ -21,55 +21,43 @@ export class BankClientService {
       'Access-Control-Allow-Origin': '*',
     }),
   };
-  
 
-  createClient(client: BankClient): Observable<BankClient> {
+  getAccounts(): Observable<Account[]> {
     return this.http
-      .post<BankClient>(
-        this.endpoint + '/clients',
-        JSON.stringify(client),
+      .get<Account[]>(
+        this.endpoint + '/accounts',
+        this.httpOptions
+        )
+      .pipe(catchError(this.handleError));
+  }
+
+  getAccountById(id:number): Observable<Account> {
+    return this.http
+      .get<Account>(
+        this.endpoint + '/accounts/' + id,
+        this.httpOptions
+        )
+      .pipe(catchError(this.handleError));
+  }
+
+  createAccount(account: Account, id:number): Observable<Account> {
+    return this.http
+      .post<Account>(
+        this.endpoint + '/accounts/' + id,
+        JSON.stringify(account),
         this.httpOptions
       )
       .pipe(catchError(this.handleError));
   }
 
-  deleteClient(id:number) {
+  deleteAccount(id: number){
     return this.http
-    .delete<BankClient>(
-      this.endpoint + '/clients/' + id,
-       this.httpOptions
-       )
-        .pipe( catchError(this.handleError))
-  }
-
-  getClients(): Observable<BankClient[]> {
-    return this.http
-      .get<BankClient[]>(
-        this.endpoint + '/clients',
+      .delete<Account>(
+        this.endpoint + '/accounts/' + id,
         this.httpOptions
-        )
+      )
       .pipe(catchError(this.handleError));
   }
-
-  getClientById(id:any): Observable<BankClient> {
-    return this.http
-      .get<BankClient>(
-        this.endpoint + '/clients/' + id,
-        this.httpOptions
-        )
-      .pipe(catchError(this.handleError));
-  }
-
-  updateClient(id : number, client : BankClient){
-    return this.http
-      .put<BankClient>(
-        this.endpoint + '/clients/' + id,
-        JSON.stringify(client),
-        this.httpOptions
-        )
-      .pipe(catchError(this.handleError));
-  }
-
 
   handleError(error: any) {
     let errorMessage = '';
@@ -81,4 +69,5 @@ export class BankClientService {
     window.alert(errorMessage);
     return throwError(() => new Error(errorMessage));
   }
+  
 }

@@ -1,8 +1,11 @@
+import { BankClient } from "./bank-client"
+
 export class Account {
-    accountNumber:string = ''
+    accountNumber!:number
     balance!:number
     type!:AccountType
     category!:AccountCat
+    clientId!: number
 
 }
 

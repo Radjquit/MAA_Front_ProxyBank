@@ -24,26 +24,8 @@ export class FormComponent implements OnInit{
     });
   }
 
-  updateClient() {
-
-
-  }
-
-  // deleteClient(id : number) {
-  //   if (window.confirm('Are you sure, you want to delete?')){
-  //       this.service.deleteClient(id).subscribe(data => {
-  //         this.loadClients()
-  //     })
-  //   }
-  // }
 
   ngOnInit(): void {;
   }
-
-  // loadClients() {
-  //   return this.service.getClients().subscribe((data: {}) => { console.log(data);
-  //     this.client = data;
-  //   })
-  // }
 
 }

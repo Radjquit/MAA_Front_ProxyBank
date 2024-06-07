@@ -23,29 +23,28 @@
 }
 
 .red-text {
-    color: red;
-   }
+  color: red;
+}
 
-   table {
-    border-collapse: collapse;
-   }
+table {
+  border-collapse: collapse;
+}
 
-   tbody tr td, thead tr th {
-    padding: 8px;
-    text-align: center;
+tbody tr td, thead tr th {
+  padding: 8px;
+  text-align: center;
+}
 
-   }
-
-   tbody tr:nth-child(even) {
-    background-color: #5cc0b8;
-  }
+tbody tr:nth-child(even) {
+  background-color: #5cc0b8;
+}
  
-  tbody tr:nth-child(odd) {
-    background-color: #5cc09a;
-  }
+tbody tr:nth-child(odd) {
+  background-color: #5cc09a;
+}
 
-  .icon {
-    background-color: inherit;
-    border: none;
-    cursor: pointer;
-  }
+.icon {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
