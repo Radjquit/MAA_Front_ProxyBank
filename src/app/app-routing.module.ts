@@ -10,6 +10,7 @@ import { ReinitPasswordComponent } from './reinit-password/reinit-password.compo
 import { UpdateFormComponent } from './update-form/update-form.component';
 import { AllAccountListComponent } from './all-account-list/all-account-list.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { AdvisorComponent } from './advisor/advisor.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path : 'forgot-password', component: ReinitPasswordComponent },
   { path : 'update/:id', component : UpdateFormComponent},
   { path : 'allAccounts', component: AllAccountListComponent},
+  { path : 'advisor', component: AdvisorComponent},
   { path : 'createAccount/:id', component: CreateAccountComponent},
   { path: '**', component: HomeComponent }
  
