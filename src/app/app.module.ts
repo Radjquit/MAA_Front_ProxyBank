@@ -19,6 +19,7 @@ import { UpdateFormComponent } from './update-form/update-form.component';
 import { AllAccountListComponent } from './all-account-list/all-account-list.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { AdvisorComponent } from './advisor/advisor.component';
+import { FormCreateAdvisorComponent } from './form-create-advisor/form-create-advisor.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AdvisorComponent } from './advisor/advisor.component';
     UpdateFormComponent,
     AllAccountListComponent,
     CreateAccountComponent,
-    AdvisorComponent
+    AdvisorComponent,
+    FormCreateAdvisorComponent
   ],
   imports: [
     BrowserModule,

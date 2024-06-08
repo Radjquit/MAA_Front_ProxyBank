@@ -1,0 +1,69 @@
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  #smiley {
+    margin: 2rem 0 1rem 0;
+  }
+  
+  #title {
+    margin-bottom: 0;
+  }
+  
+
+  #submit-btn {
+    width: 300px;
+    margin: 2rem auto;
+  
+  }
+  
+  #dinoEgg {
+   position: relative;
+   top: -3px;
+
+  
+  }
+
+  #header {
+    padding: 0.25rem 0.8rem;
+    margin: 2rem auto;
+    background: #82f76f;
+    border-radius: 4px;
+    border: none;
+  }
+  
+  
+  .underline-txt {
+   text-decoration: underline;
+  }
+  
+  .label {
+   font-weight: bold;
+   margin: 1rem 0 0.2rem 0;
+  }
+  
+  .input {
+   padding:  0.5rem 0.2rem
+  }
+  
+  
+  @media (min-width: 768px) {
+  }
+  
+  @media (min-width: 1200px) {
+  
+   #form-authent {
+    width: 32%;
+   }
+  
+   #submit-btn {
+     margin: 4rem auto;
+     padding: 0.5rem 0.9rem;
+     cursor: pointer;
+  
+   }
+  }
