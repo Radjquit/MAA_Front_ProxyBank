@@ -20,6 +20,7 @@ import { AllAccountListComponent } from './all-account-list/all-account-list.com
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { AdvisorComponent } from './advisor/advisor.component';
 import { FormCreateAdvisorComponent } from './form-create-advisor/form-create-advisor.component';
+import { TransactionModule } from './transaction/transaction.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FormCreateAdvisorComponent } from './form-create-advisor/form-create-ad
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    TransactionModule
   ],
   providers: [
     provideAnimationsAsync()

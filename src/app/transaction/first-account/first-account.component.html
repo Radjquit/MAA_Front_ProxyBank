@@ -1,0 +1,33 @@
+<div id="form-content">
+    <h1 id="title-authent" class="green-text">Choose to who</h1>
+    <p id="form-text-authent">Click on the client's name</p>
+    <table>
+        <thead id="header">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        @if (clients.length > 0) {
+        <tbody>
+            @for (client of clients; track client.id) {
+                <tr class="white-text">
+                    <td>
+                        <button class="icon white-text" (click)="goToSecondAccount(client)">
+                            {{client.identity.lastName}}
+                        </button>
+                    </td>
+                    <td>
+                        <button class="icon white-text" (click)="goToSecondAccount(client)">
+                            {{client.identity.firstName}}
+                        </button>   
+                    </td>
+                </tr>
+            }
+        </tbody>
+        } @else {
+            <p>No client registered</p>
+        }
+    </table>
+    <button id ="submit-btn" class="btn" routerLink="/list">Back to Client List</button>
+</div>

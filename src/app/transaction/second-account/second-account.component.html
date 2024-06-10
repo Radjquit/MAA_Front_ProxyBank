@@ -1,0 +1,39 @@
+<div id="form-content">
+    <h1 id="title-authent" class="green-text">Select en Account to make a deposit</h1>
+    <p id="form-text-authent">Click on an account</p>
+    <table>
+        <thead id="header">
+            <tr>
+                <th>Number</th>
+                <th>Category</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        @if (accounts.length > 0) {
+        <tbody>
+            @for (acc of accounts; track acc.accountNumber) {
+                <tr class=" white-text">
+                    <td>
+                        <button class="icon white-text" (click)="goToCreateTransaction(acc)">
+                            {{acc.accountNumber}}
+                        </button>
+                    </td>
+                    <td>
+                        <button class="icon white-text" (click)="goToCreateTransaction(acc)">
+                            {{acc.category}}
+                        </button>   
+                    </td>
+                    <td>
+                        <button class="icon white-text" (click)="goToCreateTransaction(acc)">
+                            {{acc.balance}}
+                        </button>   
+                    </td>
+                </tr>
+            }
+        </tbody>
+        } @else {
+            <p>No client registered</p>
+        }
+    </table>
+    <button id ="submit-btn" class="btn" routerLink="/list">Back to Client List</button>
+</div>

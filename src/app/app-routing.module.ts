@@ -29,14 +29,13 @@ const routes: Routes = [
   { path : 'createAccount/:id', component: CreateAccountComponent},
   { path : 'manager-view', component: AdvisorComponent},
   { path : 'create-advisor', component: FormCreateAdvisorComponent},
-
-
+  { path : 'transaction', loadChildren:()=>import('./transaction/transaction.module').then((m) => m.TransactionModule)},
   { path: '**', component: HomeComponent }
  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
