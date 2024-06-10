@@ -31,8 +31,7 @@ export class ListComponent implements OnInit {
   }
 
   goToAccountDetails(bClient: BankClient) {
-    this.router.navigate(['/accountDetail'], { state: { client: bClient } });
-    
+    this.router.navigate(['/accountDetail'], { state: { client: bClient } });    
   }
 
   goToClientDetails(bClient : BankClient) {

@@ -18,6 +18,9 @@ import { MenuComponent } from './menu/menu.component';
 import { UpdateFormComponent } from './update-form/update-form.component';
 import { AllAccountListComponent } from './all-account-list/all-account-list.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { AdvisorComponent } from './advisor/advisor.component';
+import { FormCreateAdvisorComponent } from './form-create-advisor/form-create-advisor.component';
+import { TransactionModule } from './transaction/transaction.module';
 
 @NgModule({
   declarations: [
@@ -33,14 +36,17 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     MenuComponent,
     UpdateFormComponent,
     AllAccountListComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    AdvisorComponent,
+    FormCreateAdvisorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    TransactionModule
   ],
   providers: [
     provideAnimationsAsync()

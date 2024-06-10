@@ -1,0 +1,37 @@
+<div id="content">
+    <h1 id="title" class="green-text">Welcome Manager</h1>
+    <table>
+            <thead id="header">
+                <tr>
+                    <th>Name</th>
+                    <th>Client's name</th>
+                    <th>Amount current account</th>
+                    <th>Amount saving account</th>
+                </tr>
+            </thead>
+            @if (advisors.length > 0) {
+            <tbody>
+              <tr class="white-text" *ngFor="let advisor of advisors">
+                <td>{{ advisor.identity.firstName }} {{ advisor.identity.lastName }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+              </tr>
+            </tbody>
+        } @else {
+            <p>No advisor registered</p>
+        }
+    </table>
+    <button id ="submit-btn" class="btn" routerLink="#">
+
+      Assign client to advisor
+    
+    </button>
+    
+    
+    <button id ="submit-btn" class="btn" routerLink="/create-advisor">Create new advisor</button>
+    </div>
+    
+    
+      

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Account } from '../model/account';
 import { BankClientService } from '../services/bank-client.service';
 import { BankClient } from '../model/bank-client';
@@ -16,7 +16,10 @@ export class AccountDetailListComponent implements OnInit{
     private service:BankClientService,
     private accService: AccountService,
     private routeA: ActivatedRoute,
-    private router : Router){}
+    private router : Router,
+    public changeDetector: ChangeDetectorRef
+    ){}
+ 
 
   client!: any
   accounts: Account[] = []
@@ -31,18 +34,18 @@ export class AccountDetailListComponent implements OnInit{
     let account: any = this.accService.getAccountById(id).subscribe(data => {
       account = data;
     })
-    if(account.balance!=0){
-      window.alert('Balance is not null !')
-    }else{
+    // if(account.balance!=0){
+    //   window.alert('Balance is not null !')
+    // }else{
       if (window.confirm('Are you sure, you want to delete this Account?')){
-        this.client = this.service.getClientById(this.client.id).subscribe((data:{})=> { console.log(data);
-          this.client = data;
-        })
         this.accService.deleteAccount(id).subscribe(data => {
-          this.router.navigate(['/accountDetail'], { state: { client: this.client } });
+          this.router.navigate(['/list']);
         })
       }
-    }
+    // }
+  }
+  goToTransaction(bClient : BankClient, account : Account) {
+    this.router.navigate(['/transaction'], { state: { client: bClient, account: account } }); 
   }
 
   ngOnInit() {

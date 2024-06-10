@@ -10,6 +10,9 @@ import { ReinitPasswordComponent } from './reinit-password/reinit-password.compo
 import { UpdateFormComponent } from './update-form/update-form.component';
 import { AllAccountListComponent } from './all-account-list/all-account-list.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { AdvisorComponent } from './advisor/advisor.component';
+import { Advisor } from './model/advisor';
+import { FormCreateAdvisorComponent } from './form-create-advisor/form-create-advisor.component';
 
 
 const routes: Routes = [
@@ -24,12 +27,15 @@ const routes: Routes = [
   { path : 'update/:id', component : UpdateFormComponent},
   { path : 'allAccounts', component: AllAccountListComponent},
   { path : 'createAccount/:id', component: CreateAccountComponent},
+  { path : 'manager-view', component: AdvisorComponent},
+  { path : 'create-advisor', component: FormCreateAdvisorComponent},
+  { path : 'transaction', loadChildren:()=>import('./transaction/transaction.module').then((m) => m.TransactionModule)},
   { path: '**', component: HomeComponent }
  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

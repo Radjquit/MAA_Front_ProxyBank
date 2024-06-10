@@ -25,6 +25,7 @@ export class CreateAccountComponent implements OnInit {
   createAccount() {
     this.accService.createAccount(this.account, this.client.id).subscribe((data: {}) => {
       console.log(this.account);
+      this.goToAccountDetails();
     });
   }
 
