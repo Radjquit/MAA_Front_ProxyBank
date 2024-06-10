@@ -35,28 +35,14 @@ export class SecondAccountComponent implements OnInit{
       });
   }
 
-  test(){
-    console.log(this.clientCred);
-    console.log(this.clientDeb);
-    console.log(this.accCred);
-    console.log(this.accDeb); 
-    console.log(this.accounts);
-    
-  }
-
   ngOnInit(): void {
     this.clientDeb = history.state.clientDeb
     this.clientCred = history.state.clientCred
     this.accDeb = history.state.accDeb
-    this.clientCred = this.service.getClientById(this.clientCred.id).subscribe((data: {}) => {
-     this.clientCred = data;
-    })
-    if(this.clientCred.id === this.clientDeb){
-      this.accounts = this.accounts.concat(this.clientDeb.currentAccounts).concat(this.clientDeb.savingAccounts)
+    if(this.clientCred.id === this.clientDeb.id){
+      this.accounts = this.accounts.concat(this.clientCred.currentAccounts).concat(this.clientCred.savingAccounts)
     }else{
-      this.accounts = this.accounts.concat(this.clientDeb.currentAccounts)
+      this.accounts = this.accounts.concat(this.clientCred.currentAccounts)
     }
   }
-
-
 }

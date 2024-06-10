@@ -32,7 +32,7 @@ export class UpdateFormComponent implements OnInit {
   }
 
   deleteClient(id : number) {
-    if (window.confirm('Are you sure, you want to delete this Client?')){
+    if (window.confirm('Are you sure, you want to delete this Client? \nThis action will delete all their accounts')){
       this.service.deleteClient(id).subscribe(data => {
         this.router.navigate(['/list']);
       })

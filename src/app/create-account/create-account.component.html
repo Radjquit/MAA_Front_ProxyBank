@@ -6,13 +6,13 @@
         <input [(ngModel)]="account.balance" class="formText" placeholder="Balance" name="balance" id="formText"  required/> 
         <label class="green-text label" for="type">Account's Type*</label>
         <select [(ngModel)]='account.type' name="dropdownOption" id="dropdownOption" class='form-control'>
-            <option value="Running">--Select a Client--</option>
+            <option value="Running">--Select a Type--</option>
             <option value="Running">Running</option>
             <option value="Saving">Saving</option>
         </select>
         <label class="green-text label" for="category">Account's Category*</label>
         <select [(ngModel)]='account.category' name="dropdownOption" id="dropdownOption" class='form-control'>
-            <option value="Perso">--Select a Client--</option>
+            <option value="Perso">--Select a Category--</option>
             <option value="Perso">Perso</option>
             <option value="Pro">Pro</option>
         </select>
