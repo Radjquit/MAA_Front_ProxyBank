@@ -21,7 +21,7 @@ export class AdvisorComponent {
 
 
   loadAdvisors() {
-    return this.service.getAdvisor().subscribe((data: Advisor[]) => { console.log(data);
+    return this.service.getAdvisor().subscribe((data: Advisor[]) => { 
       this.advisors = data;
       this.advisors.forEach(advisor => {
         console.log("advisor", advisor)
