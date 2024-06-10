@@ -31,7 +31,9 @@ export class CreateTransactionComponent implements OnInit {
   createTransaction() {
     this.transacService.createTransaction(this.accDeb.accountNumber, this.accCred.accountNumber, this.transac).subscribe((data: {}) => {
       console.log(this.transac);
-      this.router.navigate(['/accountDetail'], { state: { client: this.clientDeb } });  
+      this.service.getClientById(this.clientDeb.id).subscribe(data1 =>{
+        this.router.navigate(['/accountDetail'], { state: { client: data1 } });  
+      })
     });
     window.alert('Your Transaction was successfull !')
   }

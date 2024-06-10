@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Account } from '../model/account';
+import { Account, AccountType } from '../model/account';
 import { BankClientService } from '../services/bank-client.service';
 import { BankClient } from '../model/bank-client';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -21,7 +21,7 @@ export class AccountDetailListComponent implements OnInit{
     ){}
  
 
-  client!: any
+  client!: BankClient
   accounts: Account[] = []
   accountNumber: number=0
   accounts2: Account[] = []
@@ -32,13 +32,13 @@ export class AccountDetailListComponent implements OnInit{
 
   deleteAccount(id : number) {
       if (window.confirm('Are you sure, you want to delete this Account?')){
-        let test = this.accService.deleteAccount(id).subscribe(data1 => {
+        this.accService.deleteAccount(id).subscribe(d=>{
           this.service.getClientById(this.client.id).subscribe(data2=>{
             this.client = data2
             this.router.navigate(['/accountDetail'], { state: { client: this.client } });
-          this.initialize()
+            this.initialize()
             })
-            })
+        })
       }
   }
 
@@ -52,7 +52,9 @@ export class AccountDetailListComponent implements OnInit{
 
   initialize(){
     this.client=history.state.client
-    this.accounts = [].concat(this.client.currentAccounts).concat(this.client.savingAccounts);
+    this.client.currentAccounts.forEach(ca=>ca.type=AccountType.RUNNING);
+    this.client.savingAccounts.forEach(sa=>sa.type=AccountType.SAVING);
+    this.accounts = this.client.currentAccounts.concat(this.client.savingAccounts);
     this.accountNumber = this.accounts.length
   }
 }
