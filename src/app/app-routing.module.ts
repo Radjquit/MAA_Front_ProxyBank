@@ -24,12 +24,13 @@ const routes: Routes = [
   { path : 'update/:id', component : UpdateFormComponent},
   { path : 'allAccounts', component: AllAccountListComponent},
   { path : 'createAccount/:id', component: CreateAccountComponent},
+  { path : 'transaction', loadChildren:()=>import('./transaction/transaction.module').then((m) => m.TransactionModule)},
   { path: '**', component: HomeComponent }
  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

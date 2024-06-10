@@ -1,0 +1,12 @@
+<div id="form-content">
+    <h1 id="title-form" class="green-text">Finalize your transaction</h1>
+    <p id="form-text-form">Type the transaction's infos</p>
+    <form #mainForm = "ngForm" id="form-create">
+        <label class="green-text label" for="transacLabel">Label*</label>
+        <input [(ngModel)]="transac.label" class="formText" placeholder="Label" name="transacLabel" id="formText"  required/> 
+        <label class="green-text label" for="amount">Amount*</label>
+        <input [(ngModel)]="transac.amount" class="formText" placeholder="Amount" name="amount" id="amount"  required/> 
+    </form>
+
+    <button (click)="createTransaction()" id="create-btn">Just Do It</button>
+</div>

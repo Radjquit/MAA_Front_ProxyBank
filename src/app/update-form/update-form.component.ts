@@ -49,12 +49,13 @@ export class UpdateFormComponent implements OnInit {
 
   ngOnInit(): void {
     const idClient = this.routerA.snapshot.params['id']
-    this.client =  this.service.getClientById(idClient).subscribe((data: {}) => { console.log(data);
+    this.client =  this.service.getClientById(idClient).subscribe((data: {}) => { 
+      console.log(data);
       this.client = data;
     })
+    // console.log(this.client);
+    
    this.disabled = true
-   console.log(this.disabled);
-   
   }
 
 }
