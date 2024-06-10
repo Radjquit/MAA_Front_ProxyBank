@@ -1,9 +1,12 @@
+
+
 #authentification-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   font-family: 'Courier New', Courier, monospace;
+  position: relative;
 }
 
 #smiley {
@@ -38,7 +41,7 @@
 }
 
 #submit-btn {
-  width: 70%;
+  width: 50%;
   margin: 2rem auto;
 }
 
@@ -46,6 +49,8 @@
  position: absolute;
  bottom: 0;
  right: 0;
+ height: 60px;
+ width: 60px;
 
 }
 
@@ -59,7 +64,7 @@
  margin: 1rem 0 0.2rem 0;
 }
 
-.input {
+.input, select {
  padding:  0.5rem 0.2rem
 }
 
@@ -75,10 +80,15 @@
 
  #submit-btn {
    margin: 4rem auto;
-   width: 50%;
+   width: 30%;
    padding: 0.5rem 0.9rem;
    cursor: pointer;
 
+ }
+
+ #dino {
+  width: 150px;
+  height: 120px;
  }
 }
 
