@@ -9,11 +9,12 @@
 
     <label class="green-text label" for="password">Password*</label>
     <input [(ngModel)]="user.password" class="input" type="password" id="pass" name="password" placeholder="password"  required />
-    <a id="link-forgot" class="white-text underline-txt" routerLink="/forgot-password">Forgot password?</a>
+    <!-- <p id="link-forgot" class="white-text underline-txt" >Forgot password?</p> -->
 
-    <label for="role">Choose your role</label>
+    <label class="green-text label" for="role">Choose your role</label>
 
-    <select [(ngModel)]="user.role" name="role" id="role" required>
+    <select  [(ngModel)]="user.role" name="role" id="role" required>
+      <option selected disabled [value]="undefined">-- Choose an option --</option>
       <option value="manager">Manager</option>
       <option value="advisor">Advisor</option>
     </select>

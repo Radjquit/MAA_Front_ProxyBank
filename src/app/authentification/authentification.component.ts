@@ -21,7 +21,6 @@ export class AuthentificationComponent implements OnInit {
 
   signin() { 
     this.service.signin(this.user).subscribe((data: {}) => {
-      console.log(data, this.user)
       this.router.navigate(['/home']);
   });
   }

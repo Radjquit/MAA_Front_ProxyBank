@@ -3,11 +3,11 @@
     <p id="form-text-form">Type the new advisor's infos</p>
     <form #advisorCreateForm = "ngForm" id="form-new-advisor">
         <label class="green-text label" for="lastName">Last Name*</label>
-        <input [(ngModel)]="advisor.identity.lastName" class="formText" placeholder="Last Name" name="lastName" id="formText"  required/> 
+        <input  [(ngModel)]="advisor.identity.lastName" class="formText" placeholder="Last Name" name="lastName" id="formText"  required/> 
         <label class="green-text label" for="firstName">First Name*</label>
         <input [(ngModel)]="advisor.identity.firstName" class="formText" placeholder="First Name" name="firstName" id="formText" required/> 
     </form>
 
-    <button (click)="createAdvisor()" id="create-btn">Create new advisor</button>
+    <button (click)="createAdvisor()" id="create-btn" class="btn">Create new advisor</button>
 
 </div>

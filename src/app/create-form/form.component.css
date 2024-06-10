@@ -23,20 +23,16 @@
 }
 
 #create-btn {
-    width: 70%;
-    padding: 0.25rem 0.8rem;
-    margin: 2rem auto;
-    background: #82f76f;
-    border-radius: 4px;
-    border: none;
-    font-family: 'Courier New', Courier, monospace;
-    font:bold;
-  
+    margin: 2rem auto; 
 }
 
 .label {
     font-weight: bold;
     margin: 1rem 0 0.2rem 0;
+}
+
+input {
+    padding: 0.5rem 0.8rem;
 }
 
 
@@ -50,9 +46,6 @@
  }
 
  #create-btn {
-   margin-top: 4rem;
-   margin-bottom: 1rem;
-   margin-left: auto;
    width: 25%;
    padding: 0.5rem 0.9rem;
    cursor: pointer;
