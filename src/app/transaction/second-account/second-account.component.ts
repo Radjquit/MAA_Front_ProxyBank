@@ -48,13 +48,10 @@ export class SecondAccountComponent implements OnInit{
     this.clientDeb = history.state.clientDeb
     this.clientCred = history.state.clientCred
     this.accDeb = history.state.accDeb
-    this.clientCred = this.service.getClientById(this.clientCred.id).subscribe((data: {}) => {
-     this.clientCred = data;
-    })
     if(this.clientCred.id === this.clientDeb){
       this.accounts = this.accounts.concat(this.clientDeb.currentAccounts).concat(this.clientDeb.savingAccounts)
     }else{
-      this.accounts = this.accounts.concat(this.clientDeb.currentAccounts)
+      this.accounts = this.accounts.concat(this.clientCred.currentAccounts)
     }
   }
 

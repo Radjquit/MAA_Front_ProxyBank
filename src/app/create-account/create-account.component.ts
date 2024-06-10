@@ -31,7 +31,10 @@ export class CreateAccountComponent implements OnInit {
 
 
   goToAccountDetails() {
-    this.router.navigate(['/accountDetail'], { state: { client: this.client } });
+    this.service.getClientById(this.client.id).subscribe(data=>{
+      this.client = data
+      this.router.navigate(['/accountDetail'], { state: { client: this.client } });
+    })
   }
 
 

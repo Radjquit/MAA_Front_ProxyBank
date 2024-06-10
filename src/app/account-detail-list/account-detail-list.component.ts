@@ -17,7 +17,7 @@ export class AccountDetailListComponent implements OnInit{
     private accService: AccountService,
     private routeA: ActivatedRoute,
     private router : Router,
-    public changeDetector: ChangeDetectorRef
+    public changeDetector: ChangeDetectorRef,
     ){}
  
 
@@ -31,26 +31,28 @@ export class AccountDetailListComponent implements OnInit{
   }
 
   deleteAccount(id : number) {
-    let account: any = this.accService.getAccountById(id).subscribe(data => {
-      account = data;
-    })
-    // if(account.balance!=0){
-    //   window.alert('Balance is not null !')
-    // }else{
       if (window.confirm('Are you sure, you want to delete this Account?')){
-        this.accService.deleteAccount(id).subscribe(data => {
-          this.router.navigate(['/list']);
-        })
+        let test = this.accService.deleteAccount(id).subscribe(data1 => {
+          this.service.getClientById(this.client.id).subscribe(data2=>{
+            this.client = data2
+            this.router.navigate(['/accountDetail'], { state: { client: this.client } });
+          this.initialize()
+            })
+            })
       }
-    // }
   }
+
   goToTransaction(bClient : BankClient, account : Account) {
     this.router.navigate(['/transaction'], { state: { client: bClient, account: account } }); 
   }
 
   ngOnInit() {
+    this.initialize()
+  }
+
+  initialize(){
     this.client=history.state.client
-    this.accounts = this.accounts.concat(this.client.currentAccounts).concat(this.client.savingAccounts);
+    this.accounts = [].concat(this.client.currentAccounts).concat(this.client.savingAccounts);
     this.accountNumber = this.accounts.length
   }
 }
