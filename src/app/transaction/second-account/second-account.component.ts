@@ -35,15 +35,6 @@ export class SecondAccountComponent implements OnInit{
       });
   }
 
-  test(){
-    console.log(this.clientCred);
-    console.log(this.clientDeb);
-    console.log(this.accCred);
-    console.log(this.accDeb); 
-    console.log(this.accounts);
-    
-  }
-
   ngOnInit(): void {
     this.clientDeb = history.state.clientDeb
     this.clientCred = history.state.clientCred
@@ -54,6 +45,4 @@ export class SecondAccountComponent implements OnInit{
       this.accounts = this.accounts.concat(this.clientCred.currentAccounts)
     }
   }
-
-
 }
